@@ -1,0 +1,2398 @@
+[
+  {
+    "category": "billing_spend",
+    "columns": [
+      {
+        "name": "SERVICE_TYPE",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "USAGE_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "CREDITS_USED_COMPUTE",
+        "type": "NUMBER(38,9)"
+      },
+      {
+        "name": "CREDITS_USED_CLOUD_SERVICES",
+        "type": "NUMBER(38,9)"
+      },
+      {
+        "name": "CREDITS_USED",
+        "type": "NUMBER(38,9)"
+      },
+      {
+        "name": "CREDITS_ADJUSTMENT_CLOUD_SERVICES",
+        "type": "NUMBER(38,10)"
+      },
+      {
+        "name": "CREDITS_BILLED",
+        "type": "NUMBER(38,10)"
+      }
+    ],
+    "dataset": "SNOWFLAKE.ACCOUNT_USAGE.METERING_DAILY_HISTORY",
+    "field_mappings": {
+      "consumed_quantity": {
+        "available_in_source": true,
+        "source_column": "CREDITS_USED"
+      },
+      "pricing_quantity": {
+        "available_in_source": true,
+        "source_column": "CREDITS_BILLED"
+      },
+      "service_or_product": {
+        "available_in_source": true,
+        "source_column": "SERVICE_TYPE"
+      },
+      "usage_start": {
+        "available_in_source": true,
+        "source_column": "USAGE_DATE"
+      }
+    }
+  },
+  {
+    "category": "compute_warehouse_consumption",
+    "columns": [
+      {
+        "name": "START_TIME",
+        "type": "TIMESTAMP_LTZ(9)"
+      },
+      {
+        "name": "END_TIME",
+        "type": "TIMESTAMP_LTZ(9)"
+      },
+      {
+        "name": "WAREHOUSE_ID",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "WAREHOUSE_NAME",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "CREDITS_USED",
+        "type": "NUMBER(38,9)"
+      },
+      {
+        "name": "CREDITS_USED_COMPUTE",
+        "type": "NUMBER(38,9)"
+      },
+      {
+        "name": "CREDITS_USED_CLOUD_SERVICES",
+        "type": "NUMBER(38,9)"
+      },
+      {
+        "name": "CREDITS_ATTRIBUTED_COMPUTE_QUERIES",
+        "type": "NUMBER(38,9)"
+      }
+    ],
+    "dataset": "SNOWFLAKE.ACCOUNT_USAGE.WAREHOUSE_METERING_HISTORY",
+    "field_mappings": {
+      "consumed_quantity": {
+        "available_in_source": true,
+        "source_column": "CREDITS_USED"
+      },
+      "resource_id": {
+        "available_in_source": true,
+        "source_column": "WAREHOUSE_ID"
+      },
+      "resource_name": {
+        "available_in_source": true,
+        "source_column": "WAREHOUSE_NAME"
+      },
+      "usage_end": {
+        "available_in_source": true,
+        "source_column": "END_TIME"
+      },
+      "usage_start": {
+        "available_in_source": true,
+        "source_column": "START_TIME"
+      }
+    }
+  },
+  {
+    "category": "compute_query_consumption",
+    "columns": [
+      {
+        "name": "QUERY_ID",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "WAREHOUSE_ID",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "QUERY_METERING_HOUR",
+        "type": "TIMESTAMP_LTZ(9)"
+      },
+      {
+        "name": "QUERY_START_TIME",
+        "type": "TIMESTAMP_LTZ(6)"
+      },
+      {
+        "name": "QUERY_END_TIME",
+        "type": "TIMESTAMP_LTZ(6)"
+      },
+      {
+        "name": "WAREHOUSE_NAME",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "PARENT_QUERY_ID",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "ROOT_QUERY_ID",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "USER_ID",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "USER_NAME",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "ROLE_NAME",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "QUERY_HASH",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "QUERY_PARAMETERIZED_HASH",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "QUERY_TAG",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "CREDITS_USED_COMPUTE",
+        "type": "NUMBER(38,9)"
+      },
+      {
+        "name": "CREDITS_USED_CLOUD_SERVICES",
+        "type": "NUMBER(38,9)"
+      },
+      {
+        "name": "CREDITS_USED",
+        "type": "NUMBER(38,9)"
+      }
+    ],
+    "dataset": "SNOWFLAKE.ACCOUNT_USAGE.QUERY_METERING_HISTORY",
+    "field_mappings": {
+      "consumed_quantity": {
+        "available_in_source": true,
+        "source_column": "CREDITS_USED"
+      },
+      "resource_id": {
+        "available_in_source": true,
+        "source_column": "WAREHOUSE_ID"
+      },
+      "resource_name": {
+        "available_in_source": true,
+        "source_column": "WAREHOUSE_NAME"
+      },
+      "source_record_id": {
+        "available_in_source": true,
+        "source_column": "QUERY_ID"
+      },
+      "tags_or_allocation_metadata": {
+        "available_in_source": true,
+        "source_column": "QUERY_TAG"
+      },
+      "usage_end": {
+        "available_in_source": true,
+        "source_column": "QUERY_END_TIME"
+      },
+      "usage_start": {
+        "available_in_source": true,
+        "source_column": "QUERY_START_TIME"
+      }
+    }
+  },
+  {
+    "category": "compute_all_resource_consumption",
+    "columns": [
+      {
+        "name": "SERVICE_TYPE",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "START_TIME",
+        "type": "TIMESTAMP_LTZ(0)"
+      },
+      {
+        "name": "END_TIME",
+        "type": "TIMESTAMP_LTZ(0)"
+      },
+      {
+        "name": "ENTITY_ID",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "ENTITY_TYPE",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "NAME",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "DATABASE_ID",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "DATABASE_NAME",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "SCHEMA_ID",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "SCHEMA_NAME",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "CREDITS_USED_COMPUTE",
+        "type": "NUMBER(38,9)"
+      },
+      {
+        "name": "CREDITS_USED_CLOUD_SERVICES",
+        "type": "NUMBER(38,9)"
+      },
+      {
+        "name": "CREDITS_USED",
+        "type": "NUMBER(38,9)"
+      },
+      {
+        "name": "BYTES",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "ROWS",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "FILES",
+        "type": "NUMBER(38,0)"
+      }
+    ],
+    "dataset": "SNOWFLAKE.ACCOUNT_USAGE.METERING_HISTORY",
+    "field_mappings": {
+      "consumed_quantity": {
+        "available_in_source": true,
+        "source_column": "CREDITS_USED"
+      },
+      "resource_id": {
+        "available_in_source": true,
+        "source_column": "ENTITY_ID"
+      },
+      "resource_name": {
+        "available_in_source": true,
+        "source_column": "NAME"
+      },
+      "resource_type": {
+        "available_in_source": true,
+        "source_column": "ENTITY_TYPE"
+      },
+      "service_or_product": {
+        "available_in_source": true,
+        "source_column": "SERVICE_TYPE"
+      },
+      "usage_end": {
+        "available_in_source": true,
+        "source_column": "END_TIME"
+      },
+      "usage_start": {
+        "available_in_source": true,
+        "source_column": "START_TIME"
+      }
+    }
+  },
+  {
+    "category": "storage_consumption",
+    "columns": [
+      {
+        "name": "USAGE_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "STORAGE_BYTES",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "STAGE_BYTES",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "FAILSAFE_BYTES",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "HYBRID_TABLE_STORAGE_BYTES",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "ARCHIVE_STORAGE_COOL_BYTES",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "ARCHIVE_STORAGE_COLD_BYTES",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "ARCHIVE_STORAGE_RETRIEVAL_TEMP_BYTES",
+        "type": "NUMBER(38,0)"
+      }
+    ],
+    "dataset": "SNOWFLAKE.ACCOUNT_USAGE.STORAGE_USAGE",
+    "field_mappings": {
+      "consumed_quantity": {
+        "available_in_source": true,
+        "source_column": "STORAGE_BYTES"
+      },
+      "usage_start": {
+        "available_in_source": true,
+        "source_column": "USAGE_DATE"
+      }
+    }
+  },
+  {
+    "category": "database_storage_consumption",
+    "columns": [
+      {
+        "name": "USAGE_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "DATABASE_ID",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "DATABASE_NAME",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "DELETED",
+        "type": "TIMESTAMP_LTZ(6)"
+      },
+      {
+        "name": "AVERAGE_DATABASE_BYTES",
+        "type": "FLOAT"
+      },
+      {
+        "name": "AVERAGE_FAILSAFE_BYTES",
+        "type": "FLOAT"
+      },
+      {
+        "name": "AVERAGE_HYBRID_TABLE_STORAGE_BYTES",
+        "type": "FLOAT"
+      },
+      {
+        "name": "AVERAGE_ARCHIVE_STORAGE_COOL_BYTES",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "AVERAGE_ARCHIVE_STORAGE_COLD_BYTES",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "AVERAGE_ARCHIVE_STORAGE_COOL_FAILSAFE_BYTES",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "AVERAGE_ARCHIVE_STORAGE_COLD_FAILSAFE_BYTES",
+        "type": "NUMBER(38,0)"
+      }
+    ],
+    "dataset": "SNOWFLAKE.ACCOUNT_USAGE.DATABASE_STORAGE_USAGE_HISTORY",
+    "field_mappings": {
+      "consumed_quantity": {
+        "available_in_source": true,
+        "source_column": "AVERAGE_DATABASE_BYTES"
+      },
+      "resource_id": {
+        "available_in_source": true,
+        "source_column": "DATABASE_ID"
+      },
+      "resource_name": {
+        "available_in_source": true,
+        "source_column": "DATABASE_NAME"
+      },
+      "usage_start": {
+        "available_in_source": true,
+        "source_column": "USAGE_DATE"
+      }
+    }
+  },
+  {
+    "category": "stage_storage_consumption",
+    "columns": [
+      {
+        "name": "USAGE_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "AVERAGE_STAGE_BYTES",
+        "type": "NUMBER(38,6)"
+      }
+    ],
+    "dataset": "SNOWFLAKE.ACCOUNT_USAGE.STAGE_STORAGE_USAGE_HISTORY",
+    "field_mappings": {
+      "consumed_quantity": {
+        "available_in_source": true,
+        "source_column": "AVERAGE_STAGE_BYTES"
+      },
+      "usage_start": {
+        "available_in_source": true,
+        "source_column": "USAGE_DATE"
+      }
+    }
+  },
+  {
+    "category": "storage_billed_history",
+    "columns": [],
+    "dataset": "SNOWFLAKE.ACCOUNT_USAGE.STORAGE_DAILY_HISTORY",
+    "field_mappings": {
+      "usage_start": {
+        "available_in_source": false,
+        "source_column": "USAGE_DATE"
+      }
+    }
+  },
+  {
+    "category": "storage_organization",
+    "columns": [],
+    "dataset": "SNOWFLAKE.ORGANIZATION_USAGE.ORGANIZATION_USAGE_STORAGE_HISTORY",
+    "field_mappings": {
+      "consumed_quantity": {
+        "available_in_source": false,
+        "source_column": "BYTES"
+      },
+      "resource_name": {
+        "available_in_source": false,
+        "source_column": "ACCOUNT_NAME"
+      },
+      "sub_account_id": {
+        "available_in_source": false,
+        "source_column": "ACCOUNT_LOCATOR"
+      },
+      "usage_start": {
+        "available_in_source": false,
+        "source_column": "USAGE_DATE"
+      }
+    }
+  },
+  {
+    "category": "serverless_task_consumption",
+    "columns": [
+      {
+        "name": "START_TIME",
+        "type": "TIMESTAMP_LTZ(9)"
+      },
+      {
+        "name": "END_TIME",
+        "type": "TIMESTAMP_LTZ(9)"
+      },
+      {
+        "name": "CREDITS_USED",
+        "type": "NUMBER(38,9)"
+      },
+      {
+        "name": "TASK_ID",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "TASK_NAME",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "SCHEMA_ID",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "SCHEMA_NAME",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "DATABASE_ID",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "DATABASE_NAME",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "INSTANCE_ID",
+        "type": "NUMBER(38,0)"
+      }
+    ],
+    "dataset": "SNOWFLAKE.ACCOUNT_USAGE.SERVERLESS_TASK_HISTORY",
+    "field_mappings": {
+      "consumed_quantity": {
+        "available_in_source": true,
+        "source_column": "CREDITS_USED"
+      },
+      "resource_id": {
+        "available_in_source": true,
+        "source_column": "TASK_ID"
+      },
+      "resource_name": {
+        "available_in_source": true,
+        "source_column": "TASK_NAME"
+      },
+      "usage_end": {
+        "available_in_source": true,
+        "source_column": "END_TIME"
+      },
+      "usage_start": {
+        "available_in_source": true,
+        "source_column": "START_TIME"
+      }
+    }
+  },
+  {
+    "category": "serverless_alert_consumption",
+    "columns": [
+      {
+        "name": "START_TIME",
+        "type": "TIMESTAMP_LTZ(9)"
+      },
+      {
+        "name": "END_TIME",
+        "type": "TIMESTAMP_LTZ(9)"
+      },
+      {
+        "name": "CREDITS_USED",
+        "type": "NUMBER(38,9)"
+      },
+      {
+        "name": "ALERT_ID",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "ALERT_NAME",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "SCHEMA_ID",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "SCHEMA_NAME",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "DATABASE_ID",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "DATABASE_NAME",
+        "type": "VARCHAR(16777216)"
+      }
+    ],
+    "dataset": "SNOWFLAKE.ACCOUNT_USAGE.SERVERLESS_ALERT_HISTORY",
+    "field_mappings": {
+      "consumed_quantity": {
+        "available_in_source": true,
+        "source_column": "CREDITS_USED"
+      },
+      "resource_id": {
+        "available_in_source": true,
+        "source_column": "ALERT_ID"
+      },
+      "resource_name": {
+        "available_in_source": true,
+        "source_column": "ALERT_NAME"
+      },
+      "usage_end": {
+        "available_in_source": true,
+        "source_column": "END_TIME"
+      },
+      "usage_start": {
+        "available_in_source": true,
+        "source_column": "START_TIME"
+      }
+    }
+  },
+  {
+    "category": "managed_feature_consumption",
+    "columns": [
+      {
+        "name": "START_TIME",
+        "type": "TIMESTAMP_LTZ(9)"
+      },
+      {
+        "name": "END_TIME",
+        "type": "TIMESTAMP_LTZ(9)"
+      },
+      {
+        "name": "COMPUTE_POOL_NAME",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "COMPUTE_POOL_ID",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "IS_EXCLUSIVE",
+        "type": "BOOLEAN"
+      },
+      {
+        "name": "APPLICATION_NAME",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "APPLICATION_ID",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "CREDITS_USED",
+        "type": "NUMBER(38,9)"
+      }
+    ],
+    "dataset": "SNOWFLAKE.ACCOUNT_USAGE.SNOWPARK_CONTAINER_SERVICES_HISTORY",
+    "field_mappings": {
+      "consumed_quantity": {
+        "available_in_source": true,
+        "source_column": "CREDITS_USED"
+      },
+      "resource_id": {
+        "available_in_source": true,
+        "source_column": "COMPUTE_POOL_ID"
+      },
+      "resource_name": {
+        "available_in_source": true,
+        "source_column": "COMPUTE_POOL_NAME"
+      },
+      "usage_end": {
+        "available_in_source": true,
+        "source_column": "END_TIME"
+      },
+      "usage_start": {
+        "available_in_source": true,
+        "source_column": "START_TIME"
+      }
+    }
+  },
+  {
+    "category": "serverless_clustering_consumption",
+    "columns": [
+      {
+        "name": "START_TIME",
+        "type": "TIMESTAMP_LTZ(9)"
+      },
+      {
+        "name": "END_TIME",
+        "type": "TIMESTAMP_LTZ(9)"
+      },
+      {
+        "name": "CREDITS_USED",
+        "type": "NUMBER(38,9)"
+      },
+      {
+        "name": "NUM_BYTES_RECLUSTERED",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "NUM_ROWS_RECLUSTERED",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "TABLE_ID",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "TABLE_NAME",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "SCHEMA_ID",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "SCHEMA_NAME",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "DATABASE_ID",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "DATABASE_NAME",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "INSTANCE_ID",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "VERSION",
+        "type": "VARCHAR(7)"
+      }
+    ],
+    "dataset": "SNOWFLAKE.ACCOUNT_USAGE.AUTOMATIC_CLUSTERING_HISTORY",
+    "field_mappings": {
+      "consumed_quantity": {
+        "available_in_source": true,
+        "source_column": "CREDITS_USED"
+      },
+      "resource_id": {
+        "available_in_source": true,
+        "source_column": "TABLE_ID"
+      },
+      "resource_name": {
+        "available_in_source": true,
+        "source_column": "TABLE_NAME"
+      },
+      "usage_end": {
+        "available_in_source": true,
+        "source_column": "END_TIME"
+      },
+      "usage_start": {
+        "available_in_source": true,
+        "source_column": "START_TIME"
+      }
+    }
+  },
+  {
+    "category": "serverless_search_optimization_consumption",
+    "columns": [
+      {
+        "name": "START_TIME",
+        "type": "TIMESTAMP_LTZ(9)"
+      },
+      {
+        "name": "END_TIME",
+        "type": "TIMESTAMP_LTZ(9)"
+      },
+      {
+        "name": "CREDITS_USED",
+        "type": "NUMBER(38,9)"
+      },
+      {
+        "name": "INDEX_ID",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "INDEX_NAME",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "SCHEMA_ID",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "SCHEMA_NAME",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "DATABASE_ID",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "DATABASE_NAME",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "BASE_TABLE_ID",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "BASE_TABLE_NAME",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "INDEX_TYPE",
+        "type": "VARCHAR(25)"
+      }
+    ],
+    "dataset": "SNOWFLAKE.ACCOUNT_USAGE.SEARCH_OPTIMIZATION_HISTORY",
+    "field_mappings": {
+      "consumed_quantity": {
+        "available_in_source": true,
+        "source_column": "CREDITS_USED"
+      },
+      "resource_id": {
+        "available_in_source": true,
+        "source_column": "BASE_TABLE_ID"
+      },
+      "resource_name": {
+        "available_in_source": true,
+        "source_column": "BASE_TABLE_NAME"
+      },
+      "usage_end": {
+        "available_in_source": true,
+        "source_column": "END_TIME"
+      },
+      "usage_start": {
+        "available_in_source": true,
+        "source_column": "START_TIME"
+      }
+    }
+  },
+  {
+    "category": "serverless_snowpipe_consumption",
+    "columns": [
+      {
+        "name": "PIPE_ID",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "PIPE_NAME",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "START_TIME",
+        "type": "TIMESTAMP_LTZ(9)"
+      },
+      {
+        "name": "END_TIME",
+        "type": "TIMESTAMP_LTZ(9)"
+      },
+      {
+        "name": "CREDITS_USED",
+        "type": "NUMBER(38,9)"
+      },
+      {
+        "name": "BYTES_INSERTED",
+        "type": "FLOAT"
+      },
+      {
+        "name": "FILES_INSERTED",
+        "type": "VARIANT"
+      },
+      {
+        "name": "BYTES_BILLED",
+        "type": "NUMBER(38,0)"
+      }
+    ],
+    "dataset": "SNOWFLAKE.ACCOUNT_USAGE.PIPE_USAGE_HISTORY",
+    "field_mappings": {
+      "consumed_quantity": {
+        "available_in_source": true,
+        "source_column": "CREDITS_USED"
+      },
+      "resource_id": {
+        "available_in_source": true,
+        "source_column": "PIPE_ID"
+      },
+      "resource_name": {
+        "available_in_source": true,
+        "source_column": "PIPE_NAME"
+      },
+      "usage_end": {
+        "available_in_source": true,
+        "source_column": "END_TIME"
+      },
+      "usage_start": {
+        "available_in_source": true,
+        "source_column": "START_TIME"
+      }
+    }
+  },
+  {
+    "category": "serverless_cortex_ai_consumption",
+    "columns": [
+      {
+        "name": "START_TIME",
+        "type": "TIMESTAMP_LTZ(0)"
+      },
+      {
+        "name": "END_TIME",
+        "type": "TIMESTAMP_LTZ(0)"
+      },
+      {
+        "name": "FUNCTION_NAME",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "MODEL_NAME",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "QUERY_ID",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "WAREHOUSE_ID",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "ROLE_NAMES",
+        "type": "ARRAY"
+      },
+      {
+        "name": "QUERY_TAG",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "USER_ID",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "METRICS",
+        "type": "ARRAY"
+      },
+      {
+        "name": "CREDITS",
+        "type": "NUMBER(38,9)"
+      },
+      {
+        "name": "IS_COMPLETED",
+        "type": "BOOLEAN"
+      }
+    ],
+    "dataset": "SNOWFLAKE.ACCOUNT_USAGE.CORTEX_AI_FUNCTIONS_USAGE_HISTORY",
+    "field_mappings": {
+      "consumed_quantity": {
+        "available_in_source": true,
+        "source_column": "CREDITS"
+      },
+      "resource_id": {
+        "available_in_source": true,
+        "source_column": "WAREHOUSE_ID"
+      },
+      "service_or_product": {
+        "available_in_source": true,
+        "source_column": "FUNCTION_NAME"
+      },
+      "source_record_id": {
+        "available_in_source": true,
+        "source_column": "QUERY_ID"
+      },
+      "tags_or_allocation_metadata": {
+        "available_in_source": true,
+        "source_column": "QUERY_TAG"
+      },
+      "usage_end": {
+        "available_in_source": true,
+        "source_column": "END_TIME"
+      },
+      "usage_start": {
+        "available_in_source": true,
+        "source_column": "START_TIME"
+      }
+    }
+  },
+  {
+    "category": "data_transfer_consumption",
+    "columns": [
+      {
+        "name": "START_TIME",
+        "type": "TIMESTAMP_LTZ(9)"
+      },
+      {
+        "name": "END_TIME",
+        "type": "TIMESTAMP_LTZ(9)"
+      },
+      {
+        "name": "SOURCE_CLOUD",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "SOURCE_REGION",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "TARGET_CLOUD",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "TARGET_REGION",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "BYTES_TRANSFERRED",
+        "type": "FLOAT"
+      },
+      {
+        "name": "TRANSFER_TYPE",
+        "type": "VARCHAR(16777216)"
+      }
+    ],
+    "dataset": "SNOWFLAKE.ACCOUNT_USAGE.DATA_TRANSFER_HISTORY",
+    "field_mappings": {
+      "consumed_quantity": {
+        "available_in_source": true,
+        "source_column": "BYTES_TRANSFERRED"
+      },
+      "service_or_product": {
+        "available_in_source": true,
+        "source_column": "TRANSFER_TYPE"
+      },
+      "usage_end": {
+        "available_in_source": true,
+        "source_column": "END_TIME"
+      },
+      "usage_start": {
+        "available_in_source": true,
+        "source_column": "START_TIME"
+      }
+    }
+  },
+  {
+    "category": "internal_data_transfer_consumption",
+    "columns": [
+      {
+        "name": "START_TIME",
+        "type": "TIMESTAMP_LTZ(9)"
+      },
+      {
+        "name": "END_TIME",
+        "type": "TIMESTAMP_LTZ(9)"
+      },
+      {
+        "name": "TRANSFER_TYPE",
+        "type": "VARCHAR(16)"
+      },
+      {
+        "name": "COMPUTE_POOL_NAME",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "BYTES_TRANSFERRED",
+        "type": "FLOAT"
+      }
+    ],
+    "dataset": "SNOWFLAKE.ACCOUNT_USAGE.INTERNAL_DATA_TRANSFER_HISTORY",
+    "field_mappings": {
+      "consumed_quantity": {
+        "available_in_source": true,
+        "source_column": "BYTES_TRANSFERRED"
+      },
+      "resource_name": {
+        "available_in_source": true,
+        "source_column": "COMPUTE_POOL_NAME"
+      },
+      "service_or_product": {
+        "available_in_source": true,
+        "source_column": "TRANSFER_TYPE"
+      },
+      "usage_end": {
+        "available_in_source": true,
+        "source_column": "END_TIME"
+      },
+      "usage_start": {
+        "available_in_source": true,
+        "source_column": "START_TIME"
+      }
+    }
+  },
+  {
+    "category": "replication_consumption",
+    "columns": [
+      {
+        "name": "START_TIME",
+        "type": "TIMESTAMP_LTZ(9)"
+      },
+      {
+        "name": "END_TIME",
+        "type": "TIMESTAMP_LTZ(9)"
+      },
+      {
+        "name": "DATABASE_NAME",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "DATABASE_ID",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "CREDITS_USED",
+        "type": "NUMBER(38,9)"
+      },
+      {
+        "name": "BYTES_TRANSFERRED",
+        "type": "NUMBER(38,0)"
+      }
+    ],
+    "dataset": "SNOWFLAKE.ACCOUNT_USAGE.DATABASE_REPLICATION_USAGE_HISTORY",
+    "field_mappings": {
+      "consumed_quantity": {
+        "available_in_source": true,
+        "source_column": "CREDITS_USED"
+      },
+      "resource_id": {
+        "available_in_source": true,
+        "source_column": "DATABASE_ID"
+      },
+      "resource_name": {
+        "available_in_source": true,
+        "source_column": "DATABASE_NAME"
+      },
+      "usage_end": {
+        "available_in_source": true,
+        "source_column": "END_TIME"
+      },
+      "usage_start": {
+        "available_in_source": true,
+        "source_column": "START_TIME"
+      }
+    }
+  },
+  {
+    "category": "query_cost_attribution",
+    "columns": [
+      {
+        "name": "QUERY_ID",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "PARENT_QUERY_ID",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "ROOT_QUERY_ID",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "WAREHOUSE_ID",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "WAREHOUSE_NAME",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "QUERY_HASH",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "QUERY_PARAMETERIZED_HASH",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "QUERY_TAG",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "USER_NAME",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "START_TIME",
+        "type": "TIMESTAMP_LTZ(3)"
+      },
+      {
+        "name": "END_TIME",
+        "type": "TIMESTAMP_LTZ(3)"
+      },
+      {
+        "name": "CREDITS_ATTRIBUTED_COMPUTE",
+        "type": "FLOAT"
+      },
+      {
+        "name": "CREDITS_USED_QUERY_ACCELERATION",
+        "type": "FLOAT"
+      }
+    ],
+    "dataset": "SNOWFLAKE.ACCOUNT_USAGE.QUERY_ATTRIBUTION_HISTORY",
+    "field_mappings": {
+      "consumed_quantity": {
+        "available_in_source": true,
+        "source_column": "CREDITS_ATTRIBUTED_COMPUTE"
+      },
+      "resource_id": {
+        "available_in_source": true,
+        "source_column": "WAREHOUSE_ID"
+      },
+      "resource_name": {
+        "available_in_source": true,
+        "source_column": "WAREHOUSE_NAME"
+      },
+      "source_record_id": {
+        "available_in_source": true,
+        "source_column": "QUERY_ID"
+      },
+      "tags_or_allocation_metadata": {
+        "available_in_source": true,
+        "source_column": "QUERY_TAG"
+      },
+      "usage_end": {
+        "available_in_source": true,
+        "source_column": "END_TIME"
+      },
+      "usage_start": {
+        "available_in_source": true,
+        "source_column": "START_TIME"
+      }
+    }
+  },
+  {
+    "category": "query_resource_usage",
+    "columns": [
+      {
+        "name": "QUERY_ID",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "QUERY_TEXT",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "DATABASE_ID",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "DATABASE_NAME",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "SCHEMA_ID",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "SCHEMA_NAME",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "QUERY_TYPE",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "SESSION_ID",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "AUTHN_EVENT_ID",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "USER_NAME",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "ROLE_NAME",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "WAREHOUSE_ID",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "WAREHOUSE_NAME",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "WAREHOUSE_SIZE",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "WAREHOUSE_TYPE",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "CLUSTER_NUMBER",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "QUERY_TAG",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "EXECUTION_STATUS",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "ERROR_CODE",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "ERROR_MESSAGE",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "START_TIME",
+        "type": "TIMESTAMP_LTZ(6)"
+      },
+      {
+        "name": "END_TIME",
+        "type": "TIMESTAMP_LTZ(6)"
+      },
+      {
+        "name": "TOTAL_ELAPSED_TIME",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "BYTES_SCANNED",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "PERCENTAGE_SCANNED_FROM_CACHE",
+        "type": "FLOAT"
+      },
+      {
+        "name": "BYTES_WRITTEN",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "BYTES_WRITTEN_TO_RESULT",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "BYTES_READ_FROM_RESULT",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "ROWS_PRODUCED",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "ROWS_INSERTED",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "ROWS_UPDATED",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "ROWS_DELETED",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "ROWS_UNLOADED",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "BYTES_DELETED",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "PARTITIONS_SCANNED",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "PARTITIONS_TOTAL",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "BYTES_SPILLED_TO_LOCAL_STORAGE",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "BYTES_SPILLED_TO_REMOTE_STORAGE",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "BYTES_SENT_OVER_THE_NETWORK",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "COMPILATION_TIME",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "EXECUTION_TIME",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "QUEUED_PROVISIONING_TIME",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "QUEUED_REPAIR_TIME",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "QUEUED_OVERLOAD_TIME",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "TRANSACTION_BLOCKED_TIME",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "OUTBOUND_DATA_TRANSFER_CLOUD",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "OUTBOUND_DATA_TRANSFER_REGION",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "OUTBOUND_DATA_TRANSFER_BYTES",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "INBOUND_DATA_TRANSFER_CLOUD",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "INBOUND_DATA_TRANSFER_REGION",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "INBOUND_DATA_TRANSFER_BYTES",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "LIST_EXTERNAL_FILES_TIME",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "CREDITS_USED_CLOUD_SERVICES",
+        "type": "FLOAT"
+      },
+      {
+        "name": "RELEASE_VERSION",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "EXTERNAL_FUNCTION_TOTAL_INVOCATIONS",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "EXTERNAL_FUNCTION_TOTAL_SENT_ROWS",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "EXTERNAL_FUNCTION_TOTAL_RECEIVED_ROWS",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "EXTERNAL_FUNCTION_TOTAL_SENT_BYTES",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "EXTERNAL_FUNCTION_TOTAL_RECEIVED_BYTES",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "QUERY_LOAD_PERCENT",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "IS_CLIENT_GENERATED_STATEMENT",
+        "type": "BOOLEAN"
+      },
+      {
+        "name": "QUERY_ACCELERATION_BYTES_SCANNED",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "QUERY_ACCELERATION_PARTITIONS_SCANNED",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "QUERY_ACCELERATION_UPPER_LIMIT_SCALE_FACTOR",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "TRANSACTION_ID",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "CHILD_QUERIES_WAIT_TIME",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "ROLE_TYPE",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "QUERY_HASH",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "QUERY_HASH_VERSION",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "QUERY_PARAMETERIZED_HASH",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "QUERY_PARAMETERIZED_HASH_VERSION",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "SECONDARY_ROLE_STATS",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "ROWS_WRITTEN_TO_RESULT",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "QUERY_RETRY_TIME",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "QUERY_RETRY_CAUSE",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "FAULT_HANDLING_TIME",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "USER_TYPE",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "USER_DATABASE_NAME",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "USER_DATABASE_ID",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "USER_SCHEMA_NAME",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "USER_SCHEMA_ID",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "RESOURCE_CONSTRAINT",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "GENERATION",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "BIND_VALUES",
+        "type": "VARIANT"
+      },
+      {
+        "name": "AGENT_TYPE",
+        "type": "VARCHAR(16777216)"
+      }
+    ],
+    "dataset": "SNOWFLAKE.ACCOUNT_USAGE.QUERY_HISTORY",
+    "field_mappings": {
+      "consumed_quantity": {
+        "available_in_source": true,
+        "source_column": "BYTES_SCANNED"
+      },
+      "resource_id": {
+        "available_in_source": true,
+        "source_column": "WAREHOUSE_ID"
+      },
+      "resource_name": {
+        "available_in_source": true,
+        "source_column": "WAREHOUSE_NAME"
+      },
+      "resource_type": {
+        "available_in_source": true,
+        "source_column": "WAREHOUSE_TYPE"
+      },
+      "service_or_product": {
+        "available_in_source": true,
+        "source_column": "QUERY_TYPE"
+      },
+      "source_record_id": {
+        "available_in_source": true,
+        "source_column": "QUERY_ID"
+      },
+      "tags_or_allocation_metadata": {
+        "available_in_source": true,
+        "source_column": "QUERY_TAG"
+      },
+      "usage_end": {
+        "available_in_source": true,
+        "source_column": "END_TIME"
+      },
+      "usage_start": {
+        "available_in_source": true,
+        "source_column": "START_TIME"
+      }
+    }
+  },
+  {
+    "category": "pricing_rates_currency",
+    "columns": [
+      {
+        "name": "DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "ORGANIZATION_NAME",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "CONTRACT_NUMBER",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "ACCOUNT_NAME",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "ACCOUNT_LOCATOR",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "REGION",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "SERVICE_LEVEL",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "USAGE_TYPE",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "CURRENCY",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "EFFECTIVE_RATE",
+        "type": "NUMBER(38,2)"
+      },
+      {
+        "name": "SERVICE_TYPE",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "RATING_TYPE",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "BILLING_TYPE",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "IS_ADJUSTMENT",
+        "type": "BOOLEAN"
+      }
+    ],
+    "dataset": "SNOWFLAKE.ORGANIZATION_USAGE.RATE_SHEET_DAILY",
+    "field_mappings": {
+      "currency": {
+        "available_in_source": true,
+        "source_column": "CURRENCY"
+      },
+      "list_unit_price": {
+        "available_in_source": true,
+        "source_column": "EFFECTIVE_RATE"
+      },
+      "service_or_product": {
+        "available_in_source": true,
+        "source_column": "SERVICE_TYPE"
+      },
+      "sub_account_id": {
+        "available_in_source": true,
+        "source_column": "ACCOUNT_LOCATOR"
+      },
+      "usage_start": {
+        "available_in_source": true,
+        "source_column": "DATE"
+      }
+    }
+  },
+  {
+    "category": "usage_in_currency",
+    "columns": [
+      {
+        "name": "ORGANIZATION_NAME",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "CONTRACT_NUMBER",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "ACCOUNT_NAME",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "ACCOUNT_LOCATOR",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "REGION",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "SERVICE_LEVEL",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "USAGE_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "USAGE_TYPE",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "USAGE",
+        "type": "NUMBER(38,3)"
+      },
+      {
+        "name": "CURRENCY",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "USAGE_IN_CURRENCY",
+        "type": "NUMBER(38,2)"
+      },
+      {
+        "name": "BALANCE_SOURCE",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "BILLING_TYPE",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "RATING_TYPE",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "SERVICE_TYPE",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "IS_ADJUSTMENT",
+        "type": "BOOLEAN"
+      }
+    ],
+    "dataset": "SNOWFLAKE.ORGANIZATION_USAGE.USAGE_IN_CURRENCY_DAILY",
+    "field_mappings": {
+      "billed_cost": {
+        "available_in_source": true,
+        "source_column": "USAGE_IN_CURRENCY"
+      },
+      "consumed_quantity": {
+        "available_in_source": true,
+        "source_column": "USAGE"
+      },
+      "currency": {
+        "available_in_source": true,
+        "source_column": "CURRENCY"
+      },
+      "service_or_product": {
+        "available_in_source": true,
+        "source_column": "SERVICE_TYPE"
+      },
+      "sub_account_id": {
+        "available_in_source": true,
+        "source_column": "ACCOUNT_LOCATOR"
+      },
+      "usage_start": {
+        "available_in_source": true,
+        "source_column": "USAGE_DATE"
+      }
+    }
+  },
+  {
+    "category": "contracted_costs",
+    "columns": [
+      {
+        "name": "ORGANIZATION_NAME",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "CONTRACT_NUMBER",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "START_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "END_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "EXPIRATION_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "CONTRACT_ITEM",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "CURRENCY",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "AMOUNT",
+        "type": "NUMBER(38,2)"
+      },
+      {
+        "name": "CONTRACT_MODIFIED_DATE",
+        "type": "DATE"
+      }
+    ],
+    "dataset": "SNOWFLAKE.ORGANIZATION_USAGE.CONTRACT_ITEMS",
+    "field_mappings": {
+      "billing_period_end": {
+        "available_in_source": true,
+        "source_column": "END_DATE"
+      },
+      "billing_period_start": {
+        "available_in_source": true,
+        "source_column": "START_DATE"
+      },
+      "contracted_cost": {
+        "available_in_source": true,
+        "source_column": "AMOUNT"
+      },
+      "currency": {
+        "available_in_source": true,
+        "source_column": "CURRENCY"
+      },
+      "service_or_product": {
+        "available_in_source": true,
+        "source_column": "CONTRACT_ITEM"
+      }
+    }
+  },
+  {
+    "category": "commitments_balances",
+    "columns": [
+      {
+        "name": "ORGANIZATION_NAME",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "CONTRACT_NUMBER",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "CURRENCY",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "FREE_USAGE_BALANCE",
+        "type": "NUMBER(38,2)"
+      },
+      {
+        "name": "CAPACITY_BALANCE",
+        "type": "NUMBER(38,2)"
+      },
+      {
+        "name": "ON_DEMAND_CONSUMPTION_BALANCE",
+        "type": "NUMBER(38,2)"
+      },
+      {
+        "name": "ROLLOVER_BALANCE",
+        "type": "NUMBER(38,2)"
+      },
+      {
+        "name": "MARKETPLACE_CAPACITY_DRAWDOWN_BALANCE",
+        "type": "NUMBER(38,2)"
+      }
+    ],
+    "dataset": "SNOWFLAKE.ORGANIZATION_USAGE.REMAINING_BALANCE_DAILY",
+    "field_mappings": {
+      "currency": {
+        "available_in_source": true,
+        "source_column": "CURRENCY"
+      },
+      "usage_start": {
+        "available_in_source": true,
+        "source_column": "DATE"
+      }
+    }
+  },
+  {
+    "category": "budgets_limits_monitors",
+    "columns": [
+      {
+        "name": "RESOURCE_MONITOR_ID",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "NAME",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "CREATED",
+        "type": "TIMESTAMP_LTZ(6)"
+      },
+      {
+        "name": "CREDIT_QUOTA",
+        "type": "VARIANT"
+      },
+      {
+        "name": "USED_CREDITS",
+        "type": "VARIANT"
+      },
+      {
+        "name": "REMAINING_CREDITS",
+        "type": "FLOAT"
+      },
+      {
+        "name": "OWNER",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "NOTIFY",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "SUSPEND",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "SUSPEND_IMMEDIATE",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "WAREHOUSES",
+        "type": "VARCHAR(16777216)"
+      }
+    ],
+    "dataset": "SNOWFLAKE.ACCOUNT_USAGE.RESOURCE_MONITORS",
+    "field_mappings": {
+      "consumed_quantity": {
+        "available_in_source": true,
+        "source_column": "USED_CREDITS"
+      },
+      "resource_name": {
+        "available_in_source": true,
+        "source_column": "NAME"
+      },
+      "source_record_id": {
+        "available_in_source": true,
+        "source_column": "RESOURCE_MONITOR_ID"
+      }
+    }
+  },
+  {
+    "category": "budget_spending_history",
+    "columns": [],
+    "dataset": "SNOWFLAKE.LOCAL.ACCOUNT_ROOT_BUDGET!GET_SPENDING_HISTORY",
+    "field_mappings": {}
+  },
+  {
+    "category": "cost_anomalies",
+    "columns": [
+      {
+        "name": "DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "ANOMALY_ID",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "IS_ANOMALY",
+        "type": "BOOLEAN"
+      },
+      {
+        "name": "ACTUAL_VALUE",
+        "type": "NUMBER(38,2)"
+      },
+      {
+        "name": "UPPER_BOUND",
+        "type": "NUMBER(38,2)"
+      },
+      {
+        "name": "LOWER_BOUND",
+        "type": "NUMBER(38,2)"
+      },
+      {
+        "name": "FORECASTED_VALUE",
+        "type": "NUMBER(38,2)"
+      }
+    ],
+    "dataset": "SNOWFLAKE.ACCOUNT_USAGE.ANOMALIES_DAILY",
+    "field_mappings": {
+      "consumed_quantity": {
+        "available_in_source": true,
+        "source_column": "ACTUAL_VALUE"
+      },
+      "source_record_id": {
+        "available_in_source": true,
+        "source_column": "ANOMALY_ID"
+      },
+      "usage_start": {
+        "available_in_source": true,
+        "source_column": "DATE"
+      }
+    }
+  },
+  {
+    "category": "optimization_information",
+    "columns": [
+      {
+        "name": "START_TIME",
+        "type": "TIMESTAMP_LTZ(6)"
+      },
+      {
+        "name": "END_TIME",
+        "type": "TIMESTAMP_LTZ(9)"
+      },
+      {
+        "name": "WAREHOUSE_ID",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "WAREHOUSE_NAME",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "AVG_RUNNING",
+        "type": "NUMBER(38,9)"
+      },
+      {
+        "name": "AVG_QUEUED_LOAD",
+        "type": "NUMBER(38,9)"
+      },
+      {
+        "name": "AVG_QUEUED_PROVISIONING",
+        "type": "NUMBER(38,9)"
+      },
+      {
+        "name": "AVG_BLOCKED",
+        "type": "NUMBER(38,9)"
+      }
+    ],
+    "dataset": "SNOWFLAKE.ACCOUNT_USAGE.WAREHOUSE_LOAD_HISTORY",
+    "field_mappings": {
+      "resource_id": {
+        "available_in_source": true,
+        "source_column": "WAREHOUSE_ID"
+      },
+      "resource_name": {
+        "available_in_source": true,
+        "source_column": "WAREHOUSE_NAME"
+      },
+      "usage_end": {
+        "available_in_source": true,
+        "source_column": "END_TIME"
+      },
+      "usage_start": {
+        "available_in_source": true,
+        "source_column": "START_TIME"
+      }
+    }
+  },
+  {
+    "category": "tags_allocation_metadata",
+    "columns": [
+      {
+        "name": "TAG_DATABASE",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "TAG_SCHEMA",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "TAG_ID",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "TAG_NAME",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "TAG_VALUE",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "OBJECT_DATABASE",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "OBJECT_SCHEMA",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "OBJECT_ID",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "OBJECT_NAME",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "OBJECT_DELETED",
+        "type": "TIMESTAMP_LTZ(9)"
+      },
+      {
+        "name": "DOMAIN",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "COLUMN_ID",
+        "type": "NUMBER(38,0)"
+      },
+      {
+        "name": "COLUMN_NAME",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "APPLY_METHOD",
+        "type": "VARCHAR(16777216)"
+      }
+    ],
+    "dataset": "SNOWFLAKE.ACCOUNT_USAGE.TAG_REFERENCES",
+    "field_mappings": {
+      "resource_id": {
+        "available_in_source": true,
+        "source_column": "OBJECT_ID"
+      },
+      "resource_name": {
+        "available_in_source": true,
+        "source_column": "OBJECT_NAME"
+      },
+      "resource_type": {
+        "available_in_source": true,
+        "source_column": "DOMAIN"
+      },
+      "tags_or_allocation_metadata": {
+        "available_in_source": true,
+        "source_column": "TAG_VALUE"
+      }
+    }
+  },
+  {
+    "category": "focus_cost_usage",
+    "columns": [
+      {
+        "name": "BillingPeriodStart",
+        "type": "TIMESTAMP_TZ(6)"
+      },
+      {
+        "name": "BillingPeriodEnd",
+        "type": "TIMESTAMP_TZ(6)"
+      },
+      {
+        "name": "ChargePeriodStart",
+        "type": "TIMESTAMP_TZ(6)"
+      },
+      {
+        "name": "ChargePeriodEnd",
+        "type": "TIMESTAMP_TZ(6)"
+      },
+      {
+        "name": "x_UpdatedAt",
+        "type": "TIMESTAMP_TZ(6)"
+      },
+      {
+        "name": "BillingAccountName",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "BillingAccountId",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "x_OrganizationName",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "SubAccountId",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "SubAccountName",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "SubAccountType",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "x_ServiceLevel",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "ChargeCategory",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "ChargeClass",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "ChargeFrequency",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "ServiceCategory",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "ServiceName",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "ChargeDescription",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "ConsumedQuantity",
+        "type": "NUMBER(38,9)"
+      },
+      {
+        "name": "ConsumedUnit",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "PricingQuantity",
+        "type": "NUMBER(38,9)"
+      },
+      {
+        "name": "PricingUnit",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "ListUnitPrice",
+        "type": "NUMBER(38,9)"
+      },
+      {
+        "name": "ListCost",
+        "type": "NUMBER(38,9)"
+      },
+      {
+        "name": "ContractedUnitPrice",
+        "type": "NUMBER(38,9)"
+      },
+      {
+        "name": "ContractedCost",
+        "type": "NUMBER(38,9)"
+      },
+      {
+        "name": "EffectiveCost",
+        "type": "NUMBER(38,2)"
+      },
+      {
+        "name": "BilledCost",
+        "type": "NUMBER(38,2)"
+      },
+      {
+        "name": "BillingCurrency",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "PricingCategory",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "CapacityReservationId",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "CapacityReservationStatus",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "RegionId",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "RegionName",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "HostProviderName",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "InvoiceIssuerName",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "InvoiceId",
+        "type": "VARCHAR(16777216)"
+      },
+      {
+        "name": "ContractApplied",
+        "type": "VARIANT"
+      },
+      {
+        "name": "ServiceProviderName",
+        "type": "VARCHAR(16777216)"
+      }
+    ],
+    "dataset": "SNOWFLAKE.BILLING.FOCUS_COST_USAGE_V1_3",
+    "field_mappings": {
+      "billed_cost": {
+        "available_in_source": true,
+        "source_column": "BilledCost"
+      },
+      "billing_account_id": {
+        "available_in_source": true,
+        "source_column": "BillingAccountId"
+      },
+      "billing_period_end": {
+        "available_in_source": true,
+        "source_column": "BillingPeriodEnd"
+      },
+      "billing_period_start": {
+        "available_in_source": true,
+        "source_column": "BillingPeriodStart"
+      },
+      "consumed_quantity": {
+        "available_in_source": true,
+        "source_column": "ConsumedQuantity"
+      },
+      "consumed_unit": {
+        "available_in_source": true,
+        "source_column": "ConsumedUnit"
+      },
+      "contracted_cost": {
+        "available_in_source": true,
+        "source_column": "ContractedCost"
+      },
+      "currency": {
+        "available_in_source": true,
+        "source_column": "BillingCurrency"
+      },
+      "effective_cost": {
+        "available_in_source": true,
+        "source_column": "EffectiveCost"
+      },
+      "list_cost": {
+        "available_in_source": true,
+        "source_column": "ListCost"
+      },
+      "list_unit_price": {
+        "available_in_source": true,
+        "source_column": "ListUnitPrice"
+      },
+      "pricing_quantity": {
+        "available_in_source": true,
+        "source_column": "PricingQuantity"
+      },
+      "pricing_unit": {
+        "available_in_source": true,
+        "source_column": "PricingUnit"
+      },
+      "service_or_product": {
+        "available_in_source": true,
+        "source_column": "ServiceName"
+      },
+      "source_update_time": {
+        "available_in_source": true,
+        "source_column": "x_UpdatedAt"
+      },
+      "sub_account_id": {
+        "available_in_source": true,
+        "source_column": "SubAccountId"
+      },
+      "usage_end": {
+        "available_in_source": true,
+        "source_column": "ChargePeriodEnd"
+      },
+      "usage_start": {
+        "available_in_source": true,
+        "source_column": "ChargePeriodStart"
+      }
+    }
+  }
+]

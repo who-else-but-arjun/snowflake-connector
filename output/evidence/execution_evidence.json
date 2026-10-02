@@ -1,0 +1,253 @@
+{
+  "account_redacted": "KX0...10",
+  "authenticated": true,
+  "categories": [
+    {
+      "category": "billing_spend",
+      "dataset": "SNOWFLAKE.ACCOUNT_USAGE.METERING_DAILY_HISTORY",
+      "error_code": null,
+      "record_count": 1,
+      "status": "collected"
+    },
+    {
+      "category": "compute_warehouse_consumption",
+      "dataset": "SNOWFLAKE.ACCOUNT_USAGE.WAREHOUSE_METERING_HISTORY",
+      "error_code": null,
+      "record_count": 10,
+      "status": "collected"
+    },
+    {
+      "category": "compute_query_consumption",
+      "dataset": "SNOWFLAKE.ACCOUNT_USAGE.QUERY_METERING_HISTORY",
+      "error_code": null,
+      "record_count": 0,
+      "status": "empty"
+    },
+    {
+      "category": "compute_all_resource_consumption",
+      "dataset": "SNOWFLAKE.ACCOUNT_USAGE.METERING_HISTORY",
+      "error_code": null,
+      "record_count": 10,
+      "status": "collected"
+    },
+    {
+      "category": "storage_consumption",
+      "dataset": "SNOWFLAKE.ACCOUNT_USAGE.STORAGE_USAGE",
+      "error_code": null,
+      "record_count": 1,
+      "status": "collected"
+    },
+    {
+      "category": "database_storage_consumption",
+      "dataset": "SNOWFLAKE.ACCOUNT_USAGE.DATABASE_STORAGE_USAGE_HISTORY",
+      "error_code": null,
+      "record_count": 0,
+      "status": "empty"
+    },
+    {
+      "category": "stage_storage_consumption",
+      "dataset": "SNOWFLAKE.ACCOUNT_USAGE.STAGE_STORAGE_USAGE_HISTORY",
+      "error_code": null,
+      "record_count": 1,
+      "status": "collected"
+    },
+    {
+      "category": "storage_billed_history",
+      "dataset": "SNOWFLAKE.ACCOUNT_USAGE.STORAGE_DAILY_HISTORY",
+      "error_code": "Snowflake error 2003; SQLSTATE 42S02",
+      "record_count": 0,
+      "status": "failed"
+    },
+    {
+      "category": "storage_organization",
+      "dataset": "SNOWFLAKE.ORGANIZATION_USAGE.ORGANIZATION_USAGE_STORAGE_HISTORY",
+      "error_code": "Snowflake error 2003; SQLSTATE 42S02",
+      "record_count": 0,
+      "status": "failed"
+    },
+    {
+      "category": "serverless_task_consumption",
+      "dataset": "SNOWFLAKE.ACCOUNT_USAGE.SERVERLESS_TASK_HISTORY",
+      "error_code": null,
+      "record_count": 0,
+      "status": "empty"
+    },
+    {
+      "category": "serverless_alert_consumption",
+      "dataset": "SNOWFLAKE.ACCOUNT_USAGE.SERVERLESS_ALERT_HISTORY",
+      "error_code": null,
+      "record_count": 0,
+      "status": "empty"
+    },
+    {
+      "category": "managed_feature_consumption",
+      "dataset": "SNOWFLAKE.ACCOUNT_USAGE.SNOWPARK_CONTAINER_SERVICES_HISTORY",
+      "error_code": null,
+      "record_count": 0,
+      "status": "empty"
+    },
+    {
+      "category": "serverless_clustering_consumption",
+      "dataset": "SNOWFLAKE.ACCOUNT_USAGE.AUTOMATIC_CLUSTERING_HISTORY",
+      "error_code": null,
+      "record_count": 0,
+      "status": "empty"
+    },
+    {
+      "category": "serverless_search_optimization_consumption",
+      "dataset": "SNOWFLAKE.ACCOUNT_USAGE.SEARCH_OPTIMIZATION_HISTORY",
+      "error_code": null,
+      "record_count": 0,
+      "status": "empty"
+    },
+    {
+      "category": "serverless_snowpipe_consumption",
+      "dataset": "SNOWFLAKE.ACCOUNT_USAGE.PIPE_USAGE_HISTORY",
+      "error_code": null,
+      "record_count": 0,
+      "status": "empty"
+    },
+    {
+      "category": "serverless_cortex_ai_consumption",
+      "dataset": "SNOWFLAKE.ACCOUNT_USAGE.CORTEX_AI_FUNCTIONS_USAGE_HISTORY",
+      "error_code": null,
+      "record_count": 0,
+      "status": "empty"
+    },
+    {
+      "category": "data_transfer_consumption",
+      "dataset": "SNOWFLAKE.ACCOUNT_USAGE.DATA_TRANSFER_HISTORY",
+      "error_code": null,
+      "record_count": 0,
+      "status": "empty"
+    },
+    {
+      "category": "internal_data_transfer_consumption",
+      "dataset": "SNOWFLAKE.ACCOUNT_USAGE.INTERNAL_DATA_TRANSFER_HISTORY",
+      "error_code": null,
+      "record_count": 0,
+      "status": "empty"
+    },
+    {
+      "category": "replication_consumption",
+      "dataset": "SNOWFLAKE.ACCOUNT_USAGE.DATABASE_REPLICATION_USAGE_HISTORY",
+      "error_code": null,
+      "record_count": 0,
+      "status": "empty"
+    },
+    {
+      "category": "query_cost_attribution",
+      "dataset": "SNOWFLAKE.ACCOUNT_USAGE.QUERY_ATTRIBUTION_HISTORY",
+      "error_code": null,
+      "record_count": 200,
+      "status": "collected"
+    },
+    {
+      "category": "query_resource_usage",
+      "dataset": "SNOWFLAKE.ACCOUNT_USAGE.QUERY_HISTORY",
+      "error_code": null,
+      "record_count": 200,
+      "status": "collected"
+    },
+    {
+      "category": "pricing_rates_currency",
+      "dataset": "SNOWFLAKE.ORGANIZATION_USAGE.RATE_SHEET_DAILY",
+      "error_code": null,
+      "record_count": 3,
+      "status": "collected"
+    },
+    {
+      "category": "usage_in_currency",
+      "dataset": "SNOWFLAKE.ORGANIZATION_USAGE.USAGE_IN_CURRENCY_DAILY",
+      "error_code": null,
+      "record_count": 3,
+      "status": "collected"
+    },
+    {
+      "category": "contracted_costs",
+      "dataset": "SNOWFLAKE.ORGANIZATION_USAGE.CONTRACT_ITEMS",
+      "error_code": null,
+      "record_count": 1,
+      "status": "collected"
+    },
+    {
+      "category": "commitments_balances",
+      "dataset": "SNOWFLAKE.ORGANIZATION_USAGE.REMAINING_BALANCE_DAILY",
+      "error_code": null,
+      "record_count": 1,
+      "status": "collected"
+    },
+    {
+      "category": "budgets_limits_monitors",
+      "dataset": "SNOWFLAKE.ACCOUNT_USAGE.RESOURCE_MONITORS",
+      "error_code": null,
+      "record_count": 1,
+      "status": "collected"
+    },
+    {
+      "category": "budget_spending_history",
+      "dataset": "SNOWFLAKE.LOCAL.ACCOUNT_ROOT_BUDGET!GET_SPENDING_HISTORY",
+      "error_code": "Snowflake error -20000; SQLSTATE P0001",
+      "record_count": 0,
+      "status": "unavailable_in_account"
+    },
+    {
+      "category": "cost_anomalies",
+      "dataset": "SNOWFLAKE.ACCOUNT_USAGE.ANOMALIES_DAILY",
+      "error_code": null,
+      "record_count": 0,
+      "status": "empty"
+    },
+    {
+      "category": "optimization_information",
+      "dataset": "SNOWFLAKE.ACCOUNT_USAGE.WAREHOUSE_LOAD_HISTORY",
+      "error_code": null,
+      "record_count": 19,
+      "status": "collected"
+    },
+    {
+      "category": "tags_allocation_metadata",
+      "dataset": "SNOWFLAKE.ACCOUNT_USAGE.TAG_REFERENCES",
+      "error_code": null,
+      "record_count": 0,
+      "status": "empty"
+    },
+    {
+      "category": "focus_cost_usage",
+      "dataset": "SNOWFLAKE.BILLING.FOCUS_COST_USAGE_V1_3",
+      "error_code": null,
+      "record_count": 3,
+      "status": "collected"
+    }
+  ],
+  "categories_investigated": 31,
+  "collection_time_utc": "2026-10-02T12:27:50.728940+00:00",
+  "region": "AZURE_CENTRALINDIA",
+  "status_counts": {
+    "collected": {
+      "datasets": 14,
+      "records": 454
+    },
+    "empty": {
+      "datasets": 14,
+      "records": 0
+    },
+    "failed": {
+      "datasets": 2,
+      "records": 0
+    },
+    "permission_denied": {
+      "datasets": 0,
+      "records": 0
+    },
+    "unavailable_in_account": {
+      "datasets": 1,
+      "records": 0
+    },
+    "unsupported": {
+      "datasets": 0,
+      "records": 0
+    }
+  },
+  "time_range_utc": "[2026-10-01T00:00:00+00:00, 2026-10-02T00:00:00+00:00)"
+}

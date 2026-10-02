@@ -1,0 +1,48 @@
+Snowflake live execution evidence
+Authenticated: true
+Account (redacted): KX0...10
+Region: AZURE_CENTRALINDIA
+Time range UTC: [2026-10-01T00:00:00+00:00, 2026-10-02T00:00:00+00:00)
+Collection time UTC: 2026-10-02T12:27:50.728940+00:00
+Categories investigated: 31
+
+Status counts:
+collected: 14 datasets, 454 records
+empty: 14 datasets, 0 records
+permission_denied: 0 datasets, 0 records
+unavailable_in_account: 1 datasets, 0 records
+unsupported: 0 datasets, 0 records
+failed: 2 datasets, 0 records
+
+Per-category results:
+billing_spend (SNOWFLAKE.ACCOUNT_USAGE.METERING_DAILY_HISTORY): collected, 1 records
+compute_warehouse_consumption (SNOWFLAKE.ACCOUNT_USAGE.WAREHOUSE_METERING_HISTORY): collected, 10 records
+compute_query_consumption (SNOWFLAKE.ACCOUNT_USAGE.QUERY_METERING_HISTORY): empty, 0 records
+compute_all_resource_consumption (SNOWFLAKE.ACCOUNT_USAGE.METERING_HISTORY): collected, 10 records
+storage_consumption (SNOWFLAKE.ACCOUNT_USAGE.STORAGE_USAGE): collected, 1 records
+database_storage_consumption (SNOWFLAKE.ACCOUNT_USAGE.DATABASE_STORAGE_USAGE_HISTORY): empty, 0 records
+stage_storage_consumption (SNOWFLAKE.ACCOUNT_USAGE.STAGE_STORAGE_USAGE_HISTORY): collected, 1 records
+storage_billed_history (SNOWFLAKE.ACCOUNT_USAGE.STORAGE_DAILY_HISTORY): failed, 0 records
+storage_organization (SNOWFLAKE.ORGANIZATION_USAGE.ORGANIZATION_USAGE_STORAGE_HISTORY): failed, 0 records
+serverless_task_consumption (SNOWFLAKE.ACCOUNT_USAGE.SERVERLESS_TASK_HISTORY): empty, 0 records
+serverless_alert_consumption (SNOWFLAKE.ACCOUNT_USAGE.SERVERLESS_ALERT_HISTORY): empty, 0 records
+managed_feature_consumption (SNOWFLAKE.ACCOUNT_USAGE.SNOWPARK_CONTAINER_SERVICES_HISTORY): empty, 0 records
+serverless_clustering_consumption (SNOWFLAKE.ACCOUNT_USAGE.AUTOMATIC_CLUSTERING_HISTORY): empty, 0 records
+serverless_search_optimization_consumption (SNOWFLAKE.ACCOUNT_USAGE.SEARCH_OPTIMIZATION_HISTORY): empty, 0 records
+serverless_snowpipe_consumption (SNOWFLAKE.ACCOUNT_USAGE.PIPE_USAGE_HISTORY): empty, 0 records
+serverless_cortex_ai_consumption (SNOWFLAKE.ACCOUNT_USAGE.CORTEX_AI_FUNCTIONS_USAGE_HISTORY): empty, 0 records
+data_transfer_consumption (SNOWFLAKE.ACCOUNT_USAGE.DATA_TRANSFER_HISTORY): empty, 0 records
+internal_data_transfer_consumption (SNOWFLAKE.ACCOUNT_USAGE.INTERNAL_DATA_TRANSFER_HISTORY): empty, 0 records
+replication_consumption (SNOWFLAKE.ACCOUNT_USAGE.DATABASE_REPLICATION_USAGE_HISTORY): empty, 0 records
+query_cost_attribution (SNOWFLAKE.ACCOUNT_USAGE.QUERY_ATTRIBUTION_HISTORY): collected, 200 records
+query_resource_usage (SNOWFLAKE.ACCOUNT_USAGE.QUERY_HISTORY): collected, 200 records
+pricing_rates_currency (SNOWFLAKE.ORGANIZATION_USAGE.RATE_SHEET_DAILY): collected, 3 records
+usage_in_currency (SNOWFLAKE.ORGANIZATION_USAGE.USAGE_IN_CURRENCY_DAILY): collected, 3 records
+contracted_costs (SNOWFLAKE.ORGANIZATION_USAGE.CONTRACT_ITEMS): collected, 1 records
+commitments_balances (SNOWFLAKE.ORGANIZATION_USAGE.REMAINING_BALANCE_DAILY): collected, 1 records
+budgets_limits_monitors (SNOWFLAKE.ACCOUNT_USAGE.RESOURCE_MONITORS): collected, 1 records
+budget_spending_history (SNOWFLAKE.LOCAL.ACCOUNT_ROOT_BUDGET!GET_SPENDING_HISTORY): unavailable_in_account, 0 records
+cost_anomalies (SNOWFLAKE.ACCOUNT_USAGE.ANOMALIES_DAILY): empty, 0 records
+optimization_information (SNOWFLAKE.ACCOUNT_USAGE.WAREHOUSE_LOAD_HISTORY): collected, 19 records
+tags_allocation_metadata (SNOWFLAKE.ACCOUNT_USAGE.TAG_REFERENCES): empty, 0 records
+focus_cost_usage (SNOWFLAKE.BILLING.FOCUS_COST_USAGE_V1_3): collected, 3 records

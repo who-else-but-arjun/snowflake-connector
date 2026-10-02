@@ -1,0 +1,114 @@
+{
+  "additional_source_metadata": {
+    "description": "Unmapped non-null source fields; null only when no extra source values exist.",
+    "type": "object"
+  },
+  "billed_cost": {
+    "description": "Billed cost.",
+    "type": "decimal"
+  },
+  "billing_account_id": {
+    "description": "Snowflake organization name identifying the billing organization; FOCUS BillingAccountId takes precedence when provided.",
+    "type": "string"
+  },
+  "billing_period_end": {
+    "description": "Billing period end, normalized to UTC.",
+    "type": "timestamp"
+  },
+  "billing_period_start": {
+    "description": "Billing period start, normalized to UTC.",
+    "type": "timestamp"
+  },
+  "collection_time": {
+    "description": "Collection time, normalized to UTC.",
+    "type": "timestamp"
+  },
+  "consumed_quantity": {
+    "description": "Consumed quantity, preserving decimal precision.",
+    "type": "decimal"
+  },
+  "consumed_unit": {
+    "description": "Unit for consumed quantity.",
+    "type": "string"
+  },
+  "contracted_cost": {
+    "description": "Contracted cost.",
+    "type": "decimal"
+  },
+  "currency": {
+    "description": "ISO currency code when source-provided.",
+    "type": "string"
+  },
+  "effective_cost": {
+    "description": "Effective cost.",
+    "type": "decimal"
+  },
+  "list_cost": {
+    "description": "List cost.",
+    "type": "decimal"
+  },
+  "list_unit_price": {
+    "description": "List unit price.",
+    "type": "decimal"
+  },
+  "platform": {
+    "description": "Source platform.",
+    "type": "string"
+  },
+  "pricing_quantity": {
+    "description": "Quantity used for pricing.",
+    "type": "decimal"
+  },
+  "pricing_unit": {
+    "description": "Unit for pricing quantity.",
+    "type": "string"
+  },
+  "resource_id": {
+    "description": "Source resource identifier.",
+    "type": "value"
+  },
+  "resource_name": {
+    "description": "Source resource name.",
+    "type": "string"
+  },
+  "resource_type": {
+    "description": "Source resource type.",
+    "type": "string"
+  },
+  "service_or_product": {
+    "description": "Service or product dimension.",
+    "type": "string"
+  },
+  "sku": {
+    "description": "Source SKU dimension.",
+    "type": "string"
+  },
+  "source_category": {
+    "description": "Connector source category.",
+    "type": "string"
+  },
+  "source_record_id": {
+    "description": "Source row identifier.",
+    "type": "string"
+  },
+  "source_update_time": {
+    "description": "Source update time, normalized to UTC.",
+    "type": "timestamp"
+  },
+  "sub_account_id": {
+    "description": "Snowflake account locator identifying the billed sub-account; source-provided SubAccountId or account locator takes precedence.",
+    "type": "string"
+  },
+  "tags_or_allocation_metadata": {
+    "description": "Source allocation or tag value.",
+    "type": "value"
+  },
+  "usage_end": {
+    "description": "Usage end, normalized to UTC.",
+    "type": "timestamp"
+  },
+  "usage_start": {
+    "description": "Usage start, normalized to UTC.",
+    "type": "timestamp"
+  }
+}
