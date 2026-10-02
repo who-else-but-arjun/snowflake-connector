@@ -1,0 +1,657 @@
+{
+  "field_maps": {
+    "billing_spend": {
+      "service_or_product": "SERVICE_TYPE",
+      "usage_start": "USAGE_DATE",
+      "consumed_quantity": "CREDITS_USED",
+      "pricing_quantity": "CREDITS_BILLED"
+    },
+    "compute_warehouse_consumption": {
+      "resource_id": "WAREHOUSE_ID",
+      "resource_name": "WAREHOUSE_NAME",
+      "usage_start": "START_TIME",
+      "usage_end": "END_TIME",
+      "consumed_quantity": "CREDITS_USED"
+    },
+    "compute_query_consumption": {
+      "source_record_id": "QUERY_ID",
+      "resource_id": "WAREHOUSE_ID",
+      "resource_name": "WAREHOUSE_NAME",
+      "usage_start": "QUERY_START_TIME",
+      "usage_end": "QUERY_END_TIME",
+      "consumed_quantity": "CREDITS_USED",
+      "tags_or_allocation_metadata": "QUERY_TAG"
+    },
+    "compute_all_resource_consumption": {
+      "resource_id": "ENTITY_ID",
+      "resource_name": "NAME",
+      "resource_type": "ENTITY_TYPE",
+      "service_or_product": "SERVICE_TYPE",
+      "usage_start": "START_TIME",
+      "usage_end": "END_TIME",
+      "consumed_quantity": "CREDITS_USED"
+    },
+    "storage_consumption": {
+      "usage_start": "USAGE_DATE",
+      "consumed_quantity": "STORAGE_BYTES"
+    },
+    "database_storage_consumption": {
+      "resource_id": "DATABASE_ID",
+      "resource_name": "DATABASE_NAME",
+      "usage_start": "USAGE_DATE",
+      "consumed_quantity": "AVERAGE_DATABASE_BYTES"
+    },
+    "stage_storage_consumption": {
+      "usage_start": "USAGE_DATE",
+      "consumed_quantity": "AVERAGE_STAGE_BYTES"
+    },
+    "storage_billed_history": {
+      "usage_start": "USAGE_DATE"
+    },
+    "storage_organization": {
+      "sub_account_id": "ACCOUNT_LOCATOR",
+      "resource_name": "ACCOUNT_NAME",
+      "usage_start": "USAGE_DATE",
+      "consumed_quantity": "BYTES"
+    },
+    "serverless_task_consumption": {
+      "resource_id": "TASK_ID",
+      "resource_name": "TASK_NAME",
+      "usage_start": "START_TIME",
+      "usage_end": "END_TIME",
+      "consumed_quantity": "CREDITS_USED"
+    },
+    "serverless_alert_consumption": {
+      "resource_id": "ALERT_ID",
+      "resource_name": "ALERT_NAME",
+      "usage_start": "START_TIME",
+      "usage_end": "END_TIME",
+      "consumed_quantity": "CREDITS_USED"
+    },
+    "managed_feature_consumption": {
+      "resource_id": "COMPUTE_POOL_ID",
+      "resource_name": "COMPUTE_POOL_NAME",
+      "usage_start": "START_TIME",
+      "usage_end": "END_TIME",
+      "consumed_quantity": "CREDITS_USED"
+    },
+    "serverless_clustering_consumption": {
+      "resource_id": "TABLE_ID",
+      "resource_name": "TABLE_NAME",
+      "usage_start": "START_TIME",
+      "usage_end": "END_TIME",
+      "consumed_quantity": "CREDITS_USED"
+    },
+    "serverless_search_optimization_consumption": {
+      "resource_id": "BASE_TABLE_ID",
+      "resource_name": "BASE_TABLE_NAME",
+      "usage_start": "START_TIME",
+      "usage_end": "END_TIME",
+      "consumed_quantity": "CREDITS_USED"
+    },
+    "serverless_snowpipe_consumption": {
+      "resource_id": "PIPE_ID",
+      "resource_name": "PIPE_NAME",
+      "usage_start": "START_TIME",
+      "usage_end": "END_TIME",
+      "consumed_quantity": "CREDITS_USED"
+    },
+    "serverless_cortex_ai_consumption": {
+      "source_record_id": "QUERY_ID",
+      "resource_id": "WAREHOUSE_ID",
+      "service_or_product": "FUNCTION_NAME",
+      "usage_start": "START_TIME",
+      "usage_end": "END_TIME",
+      "consumed_quantity": "CREDITS",
+      "tags_or_allocation_metadata": "QUERY_TAG"
+    },
+    "data_transfer_consumption": {
+      "service_or_product": "TRANSFER_TYPE",
+      "usage_start": "START_TIME",
+      "usage_end": "END_TIME",
+      "consumed_quantity": "BYTES_TRANSFERRED"
+    },
+    "internal_data_transfer_consumption": {
+      "resource_name": "COMPUTE_POOL_NAME",
+      "service_or_product": "TRANSFER_TYPE",
+      "usage_start": "START_TIME",
+      "usage_end": "END_TIME",
+      "consumed_quantity": "BYTES_TRANSFERRED"
+    },
+    "replication_consumption": {
+      "resource_id": "DATABASE_ID",
+      "resource_name": "DATABASE_NAME",
+      "usage_start": "START_TIME",
+      "usage_end": "END_TIME",
+      "consumed_quantity": "CREDITS_USED"
+    },
+    "query_cost_attribution": {
+      "source_record_id": "QUERY_ID",
+      "resource_id": "WAREHOUSE_ID",
+      "resource_name": "WAREHOUSE_NAME",
+      "usage_start": "START_TIME",
+      "usage_end": "END_TIME",
+      "consumed_quantity": "CREDITS_ATTRIBUTED_COMPUTE",
+      "tags_or_allocation_metadata": "QUERY_TAG"
+    },
+    "query_resource_usage": {
+      "source_record_id": "QUERY_ID",
+      "resource_id": "WAREHOUSE_ID",
+      "resource_name": "WAREHOUSE_NAME",
+      "resource_type": "WAREHOUSE_TYPE",
+      "service_or_product": "QUERY_TYPE",
+      "usage_start": "START_TIME",
+      "usage_end": "END_TIME",
+      "consumed_quantity": "BYTES_SCANNED",
+      "tags_or_allocation_metadata": "QUERY_TAG"
+    },
+    "pricing_rates_currency": {
+      "sub_account_id": "ACCOUNT_LOCATOR",
+      "service_or_product": "SERVICE_TYPE",
+      "usage_start": "DATE",
+      "list_unit_price": "EFFECTIVE_RATE",
+      "currency": "CURRENCY"
+    },
+    "usage_in_currency": {
+      "sub_account_id": "ACCOUNT_LOCATOR",
+      "service_or_product": "SERVICE_TYPE",
+      "usage_start": "USAGE_DATE",
+      "consumed_quantity": "USAGE",
+      "billed_cost": "USAGE_IN_CURRENCY",
+      "currency": "CURRENCY"
+    },
+    "contracted_costs": {
+      "service_or_product": "CONTRACT_ITEM",
+      "billing_period_start": "START_DATE",
+      "billing_period_end": "END_DATE",
+      "contracted_cost": "AMOUNT",
+      "currency": "CURRENCY"
+    },
+    "commitments_balances": {
+      "usage_start": "DATE",
+      "currency": "CURRENCY"
+    },
+    "budgets_limits_monitors": {
+      "source_record_id": "RESOURCE_MONITOR_ID",
+      "resource_name": "NAME",
+      "consumed_quantity": "USED_CREDITS"
+    },
+    "budget_spending_history": {},
+    "cost_anomalies": {
+      "source_record_id": "ANOMALY_ID",
+      "usage_start": "DATE",
+      "consumed_quantity": "ACTUAL_VALUE"
+    },
+    "optimization_information": {
+      "resource_id": "WAREHOUSE_ID",
+      "resource_name": "WAREHOUSE_NAME",
+      "usage_start": "START_TIME",
+      "usage_end": "END_TIME"
+    },
+    "tags_allocation_metadata": {
+      "resource_id": "OBJECT_ID",
+      "resource_name": "OBJECT_NAME",
+      "resource_type": "DOMAIN",
+      "tags_or_allocation_metadata": "TAG_VALUE"
+    },
+    "focus_cost_usage": {
+      "billing_account_id": "BillingAccountId",
+      "sub_account_id": "SubAccountId",
+      "service_or_product": "ServiceName",
+      "source_update_time": "x_UpdatedAt",
+      "usage_start": "ChargePeriodStart",
+      "usage_end": "ChargePeriodEnd",
+      "billing_period_start": "BillingPeriodStart",
+      "billing_period_end": "BillingPeriodEnd",
+      "consumed_quantity": "ConsumedQuantity",
+      "consumed_unit": "ConsumedUnit",
+      "pricing_quantity": "PricingQuantity",
+      "pricing_unit": "PricingUnit",
+      "list_unit_price": "ListUnitPrice",
+      "list_cost": "ListCost",
+      "contracted_cost": "ContractedCost",
+      "effective_cost": "EffectiveCost",
+      "billed_cost": "BilledCost",
+      "currency": "BillingCurrency"
+    }
+  },
+  "credit_units": [
+    "billing_spend",
+    "budget_spending_history",
+    "budgets_limits_monitors",
+    "compute_all_resource_consumption",
+    "compute_query_consumption",
+    "compute_warehouse_consumption",
+    "cost_anomalies",
+    "managed_feature_consumption",
+    "query_cost_attribution",
+    "replication_consumption",
+    "serverless_alert_consumption",
+    "serverless_clustering_consumption",
+    "serverless_cortex_ai_consumption",
+    "serverless_search_optimization_consumption",
+    "serverless_snowpipe_consumption",
+    "serverless_task_consumption"
+  ],
+  "byte_units": [
+    "data_transfer_consumption",
+    "database_storage_consumption",
+    "internal_data_transfer_consumption",
+    "query_resource_usage",
+    "stage_storage_consumption",
+    "storage_billed_history",
+    "storage_consumption",
+    "storage_organization"
+  ],
+  "date_grain": [
+    "billing_spend",
+    "commitments_balances",
+    "cost_anomalies",
+    "database_storage_consumption",
+    "pricing_rates_currency",
+    "stage_storage_consumption",
+    "storage_billed_history",
+    "storage_consumption",
+    "storage_organization",
+    "usage_in_currency"
+  ],
+  "units": {
+    "serverless_cortex_ai_consumption": "credits",
+    "compute_warehouse_consumption": "credits",
+    "compute_query_consumption": "credits",
+    "replication_consumption": "credits",
+    "serverless_alert_consumption": "credits",
+    "budgets_limits_monitors": "credits",
+    "billing_spend": "credits",
+    "cost_anomalies": "credits",
+    "managed_feature_consumption": "credits",
+    "query_cost_attribution": "credits",
+    "serverless_snowpipe_consumption": "credits",
+    "compute_all_resource_consumption": "credits",
+    "serverless_search_optimization_consumption": "credits",
+    "budget_spending_history": "credits",
+    "serverless_clustering_consumption": "credits",
+    "serverless_task_consumption": "credits",
+    "storage_consumption": "bytes",
+    "query_resource_usage": "bytes",
+    "data_transfer_consumption": "bytes",
+    "stage_storage_consumption": "bytes",
+    "storage_organization": "bytes",
+    "internal_data_transfer_consumption": "bytes",
+    "database_storage_consumption": "bytes",
+    "storage_billed_history": "bytes",
+    "usage_in_currency": "credits",
+    "pricing_rates_currency": "credits",
+    "optimization_information": "avg_queries",
+    "tags_allocation_metadata": "count"
+  },
+  "resource_types": {
+    "compute_warehouse_consumption": "WAREHOUSE",
+    "compute_query_consumption": "WAREHOUSE",
+    "query_cost_attribution": "WAREHOUSE",
+    "optimization_information": "WAREHOUSE",
+    "query_resource_usage": "CLOUD_SERVICES",
+    "database_storage_consumption": "DATABASE",
+    "stage_storage_consumption": "STAGE",
+    "contracted_costs": "CONTRACT",
+    "commitments_balances": "CONTRACT",
+    "pricing_rates_currency": "RATE",
+    "budgets_limits_monitors": "RESOURCE_MONITOR",
+    "tags_allocation_metadata": "TAG"
+  },
+  "costs": [
+    "list_cost",
+    "contracted_cost",
+    "effective_cost",
+    "billed_cost"
+  ],
+  "rated": [
+    "billing_spend",
+    "budget_spending_history",
+    "budgets_limits_monitors",
+    "compute_all_resource_consumption",
+    "compute_query_consumption",
+    "compute_warehouse_consumption",
+    "cost_anomalies",
+    "managed_feature_consumption",
+    "query_cost_attribution",
+    "query_resource_usage",
+    "replication_consumption",
+    "serverless_alert_consumption",
+    "serverless_clustering_consumption",
+    "serverless_cortex_ai_consumption",
+    "serverless_search_optimization_consumption",
+    "serverless_snowpipe_consumption",
+    "serverless_task_consumption",
+    "usage_in_currency"
+  ],
+  "cost_fields": {
+    "serverless_cortex_ai_consumption": [
+      "list_cost",
+      "contracted_cost",
+      "effective_cost",
+      "billed_cost"
+    ],
+    "compute_warehouse_consumption": [
+      "list_cost",
+      "contracted_cost",
+      "effective_cost",
+      "billed_cost"
+    ],
+    "query_resource_usage": [
+      "list_cost",
+      "contracted_cost",
+      "effective_cost",
+      "billed_cost"
+    ],
+    "usage_in_currency": [
+      "list_cost",
+      "contracted_cost",
+      "effective_cost",
+      "billed_cost"
+    ],
+    "compute_query_consumption": [
+      "list_cost",
+      "contracted_cost",
+      "effective_cost",
+      "billed_cost"
+    ],
+    "replication_consumption": [
+      "list_cost",
+      "contracted_cost",
+      "effective_cost",
+      "billed_cost"
+    ],
+    "focus_cost_usage": [
+      "list_cost",
+      "contracted_cost",
+      "effective_cost",
+      "billed_cost"
+    ],
+    "serverless_alert_consumption": [
+      "list_cost",
+      "contracted_cost",
+      "effective_cost",
+      "billed_cost"
+    ],
+    "budgets_limits_monitors": [
+      "list_cost",
+      "contracted_cost",
+      "effective_cost",
+      "billed_cost"
+    ],
+    "billing_spend": [
+      "list_cost",
+      "contracted_cost",
+      "effective_cost",
+      "billed_cost"
+    ],
+    "cost_anomalies": [
+      "list_cost",
+      "contracted_cost",
+      "effective_cost",
+      "billed_cost"
+    ],
+    "managed_feature_consumption": [
+      "list_cost",
+      "contracted_cost",
+      "effective_cost",
+      "billed_cost"
+    ],
+    "query_cost_attribution": [
+      "list_cost",
+      "contracted_cost",
+      "effective_cost",
+      "billed_cost"
+    ],
+    "serverless_snowpipe_consumption": [
+      "list_cost",
+      "contracted_cost",
+      "effective_cost",
+      "billed_cost"
+    ],
+    "compute_all_resource_consumption": [
+      "list_cost",
+      "contracted_cost",
+      "effective_cost",
+      "billed_cost"
+    ],
+    "serverless_search_optimization_consumption": [
+      "list_cost",
+      "contracted_cost",
+      "effective_cost",
+      "billed_cost"
+    ],
+    "budget_spending_history": [
+      "list_cost",
+      "contracted_cost",
+      "effective_cost",
+      "billed_cost"
+    ],
+    "serverless_clustering_consumption": [
+      "list_cost",
+      "contracted_cost",
+      "effective_cost",
+      "billed_cost"
+    ],
+    "serverless_task_consumption": [
+      "list_cost",
+      "contracted_cost",
+      "effective_cost",
+      "billed_cost"
+    ],
+    "pricing_rates_currency": [
+      "list_cost",
+      "contracted_cost"
+    ],
+    "contracted_costs": [
+      "list_cost",
+      "contracted_cost"
+    ]
+  },
+  "chains": {
+    "usage_start": [
+      "START_TIME",
+      "QUERY_START_TIME",
+      "USAGE_DATE",
+      "DATE",
+      "START_DATE",
+      "ChargePeriodStart",
+      "CREATED",
+      "@window_start",
+      "@collection_time"
+    ],
+    "usage_end": [
+      "END_TIME",
+      "QUERY_END_TIME",
+      "ChargePeriodEnd",
+      "END_DATE"
+    ],
+    "billing_period_start": [
+      "BillingPeriodStart",
+      "START_DATE"
+    ],
+    "billing_period_end": [
+      "BillingPeriodEnd",
+      "END_DATE"
+    ],
+    "service_or_product": [
+      "SERVICE_TYPE",
+      "FUNCTION_NAME",
+      "TRANSFER_TYPE",
+      "QUERY_TYPE",
+      "CONTRACT_ITEM"
+    ],
+    "resource_type": [
+      "ENTITY_TYPE",
+      "WAREHOUSE_TYPE",
+      "DOMAIN"
+    ],
+    "resource_id": [
+      "WAREHOUSE_ID",
+      "ACCOUNT_LOCATOR",
+      "@account"
+    ],
+    "resource_name": [
+      "WAREHOUSE_NAME",
+      "ACCOUNT_NAME",
+      "@account"
+    ],
+    "consumed_quantity": [
+      "CREDITS_USED",
+      "CREDITS",
+      "STORAGE_BYTES",
+      "BYTES",
+      "BYTES_TRANSFERRED",
+      "USAGE",
+      "ACTUAL_VALUE"
+    ],
+    "consumed_unit": [
+      "ConsumedUnit"
+    ],
+    "pricing_quantity": [
+      "PricingQuantity"
+    ],
+    "pricing_unit": [
+      "PricingUnit"
+    ],
+    "list_unit_price": [
+      "ListUnitPrice"
+    ],
+    "billed_cost": [
+      "BilledCost"
+    ],
+    "effective_cost": [
+      "EffectiveCost"
+    ],
+    "contracted_cost": [
+      "ContractedCost"
+    ],
+    "list_cost": [
+      "ListCost"
+    ],
+    "currency": [
+      "CURRENCY",
+      "BillingCurrency"
+    ],
+    "sub_account_id": [
+      "ACCOUNT_LOCATOR",
+      "SubAccountId",
+      "@account"
+    ],
+    "billing_account_id": [
+      "BillingAccountId",
+      "ORGANIZATION_NAME",
+      "x_OrganizationName",
+      "@organization"
+    ],
+    "source_record_id": [
+      "QUERY_ID",
+      "RESOURCE_MONITOR_ID",
+      "ANOMALY_ID"
+    ],
+    "sku": [
+      "USAGE_TYPE",
+      "ChargeDescription",
+      "WAREHOUSE_SIZE",
+      "SERVICE_TYPE"
+    ],
+    "source_update_time": [
+      "x_UpdatedAt",
+      "CONTRACT_MODIFIED_DATE",
+      "@collection_time"
+    ],
+    "tags_or_allocation_metadata": [
+      "QUERY_TAG",
+      "TAG_VALUE",
+      "USER_NAME",
+      "WAREHOUSES",
+      "WAREHOUSE_NAME",
+      "ACCOUNT_NAME",
+      "ORGANIZATION_NAME"
+    ]
+  },
+  "contract_chains": {
+    "resource_id": [
+      "CONTRACT_NUMBER",
+      "ORGANIZATION_NAME",
+      "@organization"
+    ],
+    "resource_name": [
+      "CONTRACT_ITEM",
+      "ORGANIZATION_NAME",
+      "@organization"
+    ]
+  },
+  "overrides": {
+    "query_resource_usage": {
+      "resource_name": [
+        "WAREHOUSE_NAME",
+        "=CLOUD_SERVICES"
+      ],
+      "pricing_quantity": [
+        "CREDITS_USED_CLOUD_SERVICES"
+      ],
+      "pricing_unit": [
+        "=credits"
+      ]
+    },
+    "query_cost_attribution": {
+      "resource_name": [
+        "WAREHOUSE_NAME",
+        "=CLOUD_SERVICES"
+      ]
+    },
+    "compute_query_consumption": {
+      "resource_name": [
+        "WAREHOUSE_NAME",
+        "=CLOUD_SERVICES"
+      ]
+    },
+    "optimization_information": {
+      "consumed_quantity": [
+        "AVG_RUNNING"
+      ]
+    },
+    "tags_allocation_metadata": {
+      "consumed_quantity": [
+        "=1"
+      ]
+    },
+    "pricing_rates_currency": {
+      "consumed_quantity": [
+        "=1"
+      ]
+    },
+    "contracted_costs": {
+      "resource_id": [
+        "CONTRACT_NUMBER",
+        "ORGANIZATION_NAME",
+        "@organization"
+      ],
+      "resource_name": [
+        "CONTRACT_ITEM",
+        "ORGANIZATION_NAME",
+        "@organization"
+      ],
+      "consumed_quantity": [
+        "AMOUNT"
+      ]
+    },
+    "commitments_balances": {
+      "resource_id": [
+        "CONTRACT_NUMBER",
+        "ORGANIZATION_NAME",
+        "@organization"
+      ],
+      "resource_name": [
+        "CONTRACT_ITEM",
+        "ORGANIZATION_NAME",
+        "@organization"
+      ],
+      "consumed_quantity": [
+        "FREE_USAGE_BALANCE"
+      ]
+    }
+  }
+}
